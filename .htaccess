@@ -1,0 +1,71 @@
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# Set the Default Page (e.g., index.php)
+DirectoryIndex index.php
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [L,R=301]
+
+# Redirect /admin to the admin section
+RewriteRule ^admin(/.*)?$ admin/index.php [L]
+RewriteRule ^(/.*)admin/vlg_dashboard(/.*)?$ . [L]
+
+
+# Custom Error Pages
+ErrorDocument 404 /error_pages/404.html
+ErrorDocument 500 /error_pages/500.html
+
+# Prevent Directory Listing
+Options -Indexes
+
+# Enable Compression (gzip)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Set PHP Configuration
+<IfModule mod_php7.c>
+    php_flag display_errors off
+    php_value error_reporting E_ALL
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 128M
+    php_value post_max_size 16M
+    php_value upload_max_filesize 16M
+</IfModule>
+
+# Prevent Hotlinking
+# Replace example\.com with your domain
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?example\.com/.*$ [NC]
+RewriteRule \.(gif|jpg|jpeg|png)$ - [F]
+
+# Cache Control (Adjust as Needed)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>

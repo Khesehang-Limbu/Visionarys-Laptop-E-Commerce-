@@ -1,0 +1,167 @@
+/* Globals */
+:root {
+    --primary-color: #0E0EFD;
+    --accent-color: #F86F03;
+    --danger: #F32013;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.max-vh {
+    height: 100vh;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+    font-size: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    border-top: 1px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer h2 {
+    font-size: 1rem;
+}
+
+.copyright-section,
+.social-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-section a {
+    margin-right: 10px;
+}
+
+/* Forms */
+.form-logo {
+    text-align: center;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 3%;
+    width: 40%;
+    padding: 3%;
+    margin: 1% auto;
+    background-color: #F5F5F5;
+}
+
+.form-container > * {
+    margin-bottom: 10px;
+}
+
+.form-container > div > * {
+    margin-bottom: 10px;
+}
+
+.form-container>:nth-child(4) {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent-color);
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 3.125rem;
+    font-weight: 800;
+}
+
+.form-container form {
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.form-field label,
+.form-field input {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.is-invalid {
+    border: 1px solid var(--danger);
+}
+
+.invalid-feedback {
+    color: var(--danger);
+}
+
+/* buttons */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-color);
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-primary-outline {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-accent-outline {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-primary-outline,
+.btn-accent-outline {
+    background-color: white;
+}
