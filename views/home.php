@@ -1,3 +1,5 @@
+<?php $this->title = "Home"; ?>
+
 <link href="css/home.css" rel="stylesheet" />
 <div class="carousel">
     <div class="carousel-body">

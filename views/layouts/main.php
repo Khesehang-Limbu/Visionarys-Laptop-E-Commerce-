@@ -1,6 +1,8 @@
 <?php
 //include_once("../templates/header.php");
 use evil\phpmvc\Application;
+
+/* @var $this evil\phpmv\view */
 ?>
 
 <!DOCTYPE html>
@@ -27,15 +29,17 @@ use evil\phpmvc\Application;
     <?php endif; ?>
     <nav>
         <div class="logo">
-            <img src="images/Logo.png" alt="VLG Logo" />
+            <a href="/">
+                <img src="images/Logo.png" alt="VLG Logo" />
+            </a>
         </div>
         <div class="nav-links">
             <ul>
                 <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="contact">Contact Us</a></li>
-                <li><a href="">About Us</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/about">About Us</a></li>
 
                 <?php if (Application::isGuest()) : ?>
                     <li><a href="login"><i class="fa-solid fa-user"></i></a></li>
