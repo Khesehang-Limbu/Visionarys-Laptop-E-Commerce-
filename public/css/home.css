@@ -5,13 +5,24 @@
     margin: 0 5px;
 }
 
-.carousel-body{
+.carousel-body {
     display: grid;
     grid-template-columns: 50% 50%;
     overflow: hidden;
 }
 
-.carousel-text{
+.carousel-image {
+    height: 70vh;
+}
+
+
+.carousel-image img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+}
+
+.carousel-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,18 +31,18 @@
     color: #FF0505;
 }
 
-.dot-container{
+.dot-container {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 1px;
 }
 
-.active{
+.active {
     opacity: 100% !important;
 }
 
-.dot{
+.dot {
     border: 3px solid;
     width: 3px;
     text-align: center;
@@ -43,41 +54,61 @@
     margin: 20px 0 60px 0;
 }
 
-.best-deal-item {
-    height: 655px;
+.product{
     width: 400px;
 }
 
-.best-deal-specs{
-    background-color: #F86F03;
-    border-radius: 10px;
-    border-color: #F86F03;
-    padding: 5px 0;
+.add-to-cart {
+    padding: 20px;
+    text-align: center;
+    color: var(--accent-color);
+    border: 1px solid var(--primary-color);
+    border-bottom-left-radius: 10px;
+    margin-top: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
 }
 
-.best-deal-specs h2{
+.best-deal-btn:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.desc-title {
+    display: block;
+}
+
+.product-specs {
+    background-color: #F86F03;
+    border-top-left-radius: 10px;
+    border-color: #F86F03;
+    padding: 5px 0;
+    border-top-right-radius: 10px;
+}
+
+.product-specs h2 {
     text-align: center;
     text-decoration: underline;
     color: white;
 }
 
-.best-deal-title{
+.product-title {
     margin: 20px 0;
 }
 
-.best-deal-text{
+.product-text {
     padding: 5px;
     margin: 0 5px;
 }
 
-.best-deal-spec-description,
-.best-deal-price
-{
+.product-spec-description,
+.product-price {
     background-color: white;
     padding: 10px;
 }
 
-.best-deal-spec-description{
+.product-spec-description {
     border-radius: 10px 10px 0 0;
     margin-bottom: 10px;
 }
@@ -96,19 +127,26 @@
     text-align: center;
 }
 
-.best-deal-price{
+.best-deal-price {
     border-radius: 0 0 10px 10px;
 }
 
 .slide-right {
-  animation: 3s slide-right;
+    animation: 3s slide-right;
+}
+
+.best-deals .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding: 5%;
+    gap: 25px;
 }
 
 @keyframes slide-right {
-  from {
-    margin-left: -100%;
-  }
-  to {
-    margin-left: 0%;
-  }
+    from {
+        margin-left: -100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
 }

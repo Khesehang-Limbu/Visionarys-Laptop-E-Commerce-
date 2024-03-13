@@ -36,7 +36,7 @@ use evil\phpmvc\Application;
         <div class="nav-links">
             <ul>
                 <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href="/cart">Cart</a></li>
+                <li data-open-modal><i class="fa-solid fa-cart-shopping"></i></li>
                 <li><a href="/products">Products</a></li>
                 <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/about">About Us</a></li>
@@ -58,6 +58,17 @@ use evil\phpmvc\Application;
             </ul>
         </div>
     </nav>
+
+    <dialog data-modal class="cart-modal">
+        <div>
+            <h2 class="text-center">Your Cart</h2>
+
+            <form method="POST" action="payment" name="cart_form">
+                <button class="btn btn-dark" type="submit">Checkout</button>
+            </form>
+        </div>
+    </dialog>
+
     {{content}}
     <?php
     //include_once("../templates/footer.php");

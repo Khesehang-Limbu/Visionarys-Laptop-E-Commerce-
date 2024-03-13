@@ -9,9 +9,11 @@ class m0001_initial
             id INT AUTO_INCREMENT PRIMARY KEY,
             email VARCHAR(255) NOT NULL,
             full_name VARCHAR(255) NOT NULL,
+            phone_number VARCHAR(255) NOT NULL,
             address VARCHAR(255) NOT NULL,
             status TINYINT NOT NULL DEFAULT 0,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(phone_number)
         ) ENGINE=INNODB;";
         \evil\phpmvc\Application::$app->db->pdo->exec($SQL);
     }

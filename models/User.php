@@ -15,6 +15,7 @@ class User extends UserModel
     public string $password = "";
     public string $confirm_password = "";
     public string $address = "";
+    public string $phone_number = "";
     public int $status = self::STATUS_INACTIVE;
 
     public function tableName(): string
@@ -30,6 +31,7 @@ class User extends UserModel
             "password",
             "address",
             "status",
+            "phone_number",
         ];
     }
 
@@ -50,6 +52,7 @@ class User extends UserModel
             "address" => [self::RULE_REQUIRED],
             "password" => [self::RULE_REQUIRED, [self::RULE_MIN, "min" => 8], [self::RULE_MAX, "max" => 20]],
             "confirm_password" => [self::RULE_REQUIRED, [self::RULE_MATCH, "match" => "password"]],
+            "phone_number" => [self::RULE_REQUIRED, [self::RULE_UNIQUE, "class" => self::class]],
         ];
     }
 
@@ -61,6 +64,7 @@ class User extends UserModel
             "address" =>  "Address",
             "password" =>  "Password",
             "confirm_password" =>  "Confirm Password",
+            "phone_number" =>  "Phone Number",
         ];
     }
 

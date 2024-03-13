@@ -3,13 +3,15 @@
 /** @var $model = \app\models\User; */
 
 use \evil\phpmvc\form\Form;
-
+$this->title = "Login";
 ?>
 
 <div class="flex-container max-vh">
     <div class="form-container">
         <div class="form-logo">
-            <img src="/images/Logo.png" alt="Logo" />
+            <a href="/">
+                <img src="/images/Logo.png" alt="Logo" />
+            </a>
         </div>
         <h2>Login</h2>
 

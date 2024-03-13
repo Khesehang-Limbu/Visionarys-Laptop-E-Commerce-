@@ -9,7 +9,9 @@ use \evil\phpmvc\form\Form;
 <div class="flex-container max-vh">
     <div class="form-container">
         <div class="form-logo">
-            <img src="/images/Logo.png" alt="Logo" />
+            <a href="/">
+                <img src="/images/Logo.png" alt="Logo" />
+            </a>
         </div>
         <h2>Register</h2>
 
@@ -17,6 +19,7 @@ use \evil\phpmvc\form\Form;
         <?php echo $form->field($model, "full_name") ?>
         <?php echo $form->field($model, "email") ?>
         <?php echo $form->field($model, "address") ?>
+        <?php echo $form->field($model, "phone_number") ?>
         <?php echo $form->field($model, "password")->passwordField() ?>
         <?php echo $form->field($model, "confirm_password")->passwordField() ?>
         <button class="btn btn-primary-outline" type="submit">Register</button>
